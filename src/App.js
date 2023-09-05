@@ -1,6 +1,8 @@
+import Header from './assets/components/Header';
+
 const App = () => (
   <>
-    <h1>Coming...</h1>
+    <Header />
   </>
 );
 
