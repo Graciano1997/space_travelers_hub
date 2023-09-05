@@ -1,6 +1,6 @@
 @import url(./root.css);
 
-/* *****Style for header********/
+/* *****Style for header ********/
 
 .headerContainer {
   display: flex;
@@ -9,10 +9,10 @@
   align-items: center;
 }
 
-/* *****HEADER_END*******/
+/* *****HEADER_END *******/
 
 
-/* *****LOGO_STYLE*******/
+/* *****LOGO_STYLE *******/
 .logoContainer {
   display: flex;
   justify-content: flex-start;
@@ -20,13 +20,13 @@
   align-items: center;
 }
 
-/* *****LOGO_END*******/
+/* *****LOGO_END *******/
 .logo {
   width: 15%;
   height: 15%;
 }
 
-/* *****NAV_STYLE*******/
+/* *****NAV_STYLE *******/
 .navContainer {
   display: flex;
   gap: 12px;
@@ -39,7 +39,7 @@
 
 .separator {
   height: 15px;
-  border: 1px solid blue;
+  border: 1px solid var(--blue);
 }
 
-/* *****NAV_END*******/
+/* *****NAV_END *******/
