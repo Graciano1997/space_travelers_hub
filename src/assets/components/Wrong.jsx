@@ -1,6 +1,8 @@
+import style from '../style/Error.module.css';
+
 const Wrong = () => (
-  <div>
-    <h1>UUUPPPSSSS! Page Not Found 😫😭</h1>
+  <div className={style.errorContainer}>
+    <h1>UUUPPPSSSS! Page Not Found 😫😭🚀🚀🚀</h1>
     <p>Please Ensure to write a valid path...</p>
   </div>
 );
