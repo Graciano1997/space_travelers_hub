@@ -11,8 +11,6 @@ function Rockets() {
     dispatch(getRockets());
   }, [dispatch]);
 
-  console.log(rocketsArray);
-
   if (isLoading) {
     return (
       <div className={style.isLoading}>

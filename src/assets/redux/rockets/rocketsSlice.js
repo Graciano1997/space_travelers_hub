@@ -53,8 +53,6 @@ const rocketsSlice = createSlice({
         rocket_type: rockect.rocket_type,
       }));
       state.rocketsArray = newRocketsArray;
-      console.log('********************');
-      console.log(state.rocketsArray);
     },
   },
 });
