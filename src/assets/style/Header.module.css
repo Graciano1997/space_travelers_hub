@@ -26,7 +26,6 @@
 
 /* *****LOGO_END *******/
 
-
 /* *****NAV_STYLE *******/
 .navContainer {
   display: flex;
@@ -48,10 +47,6 @@
   color: purple;
   text-decoration: underline;
   font-size: 20px;
-}
-
-.agora {
-  color: pink;
 }
 
 .separator {
