@@ -19,11 +19,12 @@
   align-items: center;
 }
 
-/* *****LOGO_END *******/
 .logo {
   width: 15%;
   height: 15%;
 }
+/* *****LOGO_END *******/
+
 
 /* *****NAV_STYLE *******/
 .navContainer {
