@@ -1,0 +1,44 @@
+@import url(./root.css);
+
+/* *****Style for header ********/
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  align-items: center;
+}
+
+/* *****HEADER_END *******/
+
+/* *****LOGO_STYLE *******/
+.logoContainer {
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px;
+  align-items: center;
+}
+
+/* *****LOGO_END *******/
+.logo {
+  width: 15%;
+  height: 15%;
+}
+
+/* *****NAV_STYLE *******/
+.navContainer {
+  display: flex;
+  gap: 12px;
+}
+
+.navContainer li {
+  list-style: none;
+  cursor: pointer;
+}
+
+.separator {
+  height: 15px;
+  border: 1px solid var(--blue);
+}
+
+/* *****NAV_END *******/
