@@ -1,4 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 const initialState = {
   rocketsArray: [],
@@ -23,7 +24,7 @@ const rocketsSlice = createSlice({
   },
   extraReducers: {
 
-  }
+  },
 });
 
 export default rocketsSlice.reducer;
