@@ -1,4 +1,4 @@
-import style from '../style/Error.module.css';
+import style from '../style/Info.module.css';
 
 const Wrong = () => (
   <div className={style.errorContainer}>

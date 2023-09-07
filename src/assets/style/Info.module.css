@@ -1,3 +1,5 @@
+.isLoading,
+.hasError,
 .errorContainer {
   display: flex;
   flex-direction: column;
