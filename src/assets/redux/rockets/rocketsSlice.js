@@ -26,7 +26,6 @@ const rocketsSlice = createSlice({
         if (rocket.id !== id) {
           return rocket;
         }
-
         if (rocket.reserved === undefined || rocket.reserved === false) {
           return { ...rocket, reserved: true };
         }
@@ -45,14 +44,13 @@ const rocketsSlice = createSlice({
     },
     [getRockets.fulfilled]: (state, action) => {
       state.isLoading = false;
-      const newRocketsArray = (action.payload).map((rockect) => ({
+      state.rocketsArray = (action.payload).map((rockect) => ({
         id: parseInt(rockect.id, 10),
         flickr_images: rockect.flickr_images,
         description: rockect.description,
         rocket_name: rockect.rocket_name,
         rocket_type: rockect.rocket_type,
       }));
-      state.rocketsArray = newRocketsArray;
     },
   },
 });

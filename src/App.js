@@ -12,8 +12,6 @@ const App = () => (
       <Route path="rocket" element={<Rocket />} />
       <Route path="profile" element={<Profile />} />
       <Route path="/*" element={<Wrong />} />
-      {/* <Route path='mission' element={ } />
-      <Route path='profile' element={ } /> */}
     </Routes>
   </>
 );
