@@ -53,7 +53,7 @@
 }
 
 .leave:hover {
-  background-color: #ff3333; /* Change to red on hover */
+  background-color: #f33; /* Change to red on hover */
   color: #fff;
 }
 
@@ -95,9 +95,6 @@
 }
 
 /* Additional styles for specific elements */
-.mission {
-  width: 10%;
-}
 
 .mission-status {
   width: 18%;
