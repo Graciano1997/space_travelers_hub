@@ -39,7 +39,6 @@ const rocketsSlice = createSlice({
       .addCase(getRockets.pending, (state) => {
         state.isLoading = true;
       })
-      // You can chain calls, or have separate `builder.addCase()` lines each time
       .addCase(getRockets.rejected, (state) => {
         state.isLoading = false;
         state.hasError = true;
