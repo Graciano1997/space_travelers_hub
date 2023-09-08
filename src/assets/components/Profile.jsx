@@ -41,7 +41,7 @@ function Profile() {
 
           {reservedRockets.map((rocket, index) => (
             <div key={{ index }}>
-              <h3>
+              <h3 title="rocketItem">
                 {' '}
                 {`${rocket.rocket_name}🚀`}
               </h3>

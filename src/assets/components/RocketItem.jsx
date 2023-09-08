@@ -18,7 +18,7 @@ function RocketItem({
         <h3>{name}</h3>
         {reserved && <div>Reserved</div>}
         <p>{description}</p>
-        <button type="button" aria-label="reserve / calncel  rocket" onClick={handlerReserve}>{ info}</button>
+        <button type="button" aria-label="reserve / calncel  rocket" onClick={handlerReserve}>{info}</button>
       </div>
     </div>
   );
@@ -27,9 +27,12 @@ RocketItem.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  reserved: (PropTypes.bool.isRequired),
-  // type: PropTypes.string.isRequired,
+  reserved: (PropTypes.bool),
   imageRocket: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
+
+RocketItem.defaultProps = {
+  reserved: undefined,
 };
 
 export default RocketItem;
