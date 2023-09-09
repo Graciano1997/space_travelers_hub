@@ -55,7 +55,7 @@ This website shows a list of rockets and missions with information and functiona
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-There's, currently, no live demo for this project.
+- [Live Demo Link](https://space-travelers-hub-sepia.vercel.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
