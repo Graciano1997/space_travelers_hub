@@ -7,9 +7,12 @@ import style from '../assets/style/Info.module.css';
 function Rockets() {
   const { rocketsArray, isLoading, hasError } = useSelector((state) => state.rockets);
   const dispatch = useDispatch();
+
   useEffect(() => {
-    dispatch(getRockets());
-  }, [dispatch]);
+    if (rocketsArray.length === 0) {
+      dispatch(getRockets());
+    }
+  }, [dispatch, rocketsArray]);
 
   if (isLoading) {
     return (

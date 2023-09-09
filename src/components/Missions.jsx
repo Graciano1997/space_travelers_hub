@@ -10,8 +10,10 @@ function Missions() {
   const { missions, error, loading } = useSelector((state) => state.missions);
 
   useEffect(() => {
-    dispatch(fetchMissions());
-  }, [dispatch]);
+    if (missions.length === 0) {
+      dispatch(fetchMissions());
+    }
+  }, [dispatch, missions]);
 
   if (error) {
     return <div className={styles.error}>{error}</div>;
