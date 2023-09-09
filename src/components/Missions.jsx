@@ -25,8 +25,6 @@ function Missions() {
     );
   }
 
-  const missionsAvailable = missions;
-
   return (
     <table className={styles['mission-table']}>
       <thead>
@@ -38,7 +36,7 @@ function Missions() {
         </tr>
       </thead>
       <tbody>
-        {missionsAvailable.map((mission) => (
+        {missions.map((mission) => (
           <Mission
             mission={mission}
             key={mission.mission_id}

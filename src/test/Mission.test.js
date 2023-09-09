@@ -4,62 +4,66 @@ import '@testing-library/jest-dom/extend-expect';
 import store from '../redux/store';
 import Missions from '../components/Missions';
 
+const response = {
+  data: [
+    {
+      mission_id: '1gra',
+      mission_name: 'Microverse Planet',
+      description: 'Going to Study in space',
+      reserved: false,
+    },
+    {
+      mission_id: '2arora',
+      mission_name: 'Travel with Nasa',
+      description: 'Let us go ....',
+      reserved: false,
+    },
+    {
+      mission_id: '3g',
+      mission_name: 'Travel with Start',
+      description: 'Please call Mr Ellon ....',
+      reserved: false,
+    },
+  ],
+};
+
 jest.mock('axios', () => ({
-  get: jest.fn(),
+  get: jest.fn().mockResolvedValue(response),
 }));
 
-// describe('Loading missions component', () => {
-//   it('renders correctly', () => {
-
-//     const { tree } = render(
-//       <Provider store={store}>
-//         <Missions />
-//       </Provider>,
-//     );
-//     expect(tree).toMatchSnapshot();
-//   });
-// });
-// const initialState = {
-//   missions: [
-//     {
-//       id: 1,
-//       name: 'Mission',
-//       description: 'This is a lengthy description indicating the mission paramaters',
-//       reserved: false,
-//     },
-//   ],
-// };
-
 function MockingMissions() {
-  // const store = mockStore(initialState);
   return (
     <Provider store={store}>
       <Missions />
     </Provider>
   );
 }
+describe("testing the Missions", () => {
 
-test('the amount of  Rockets and implicitly the getRockets() ', () => {
-  render(<MockingMissions />);
-  const MissionElements = screen.getByText(/This is a lengthy /i);
-  expect(MissionElements).toBeInTheDocument();
+  test('Testing Travel to space with Nasa ', async () => {
+    render(<MockingMissions />);
+    const MissionElements = await screen.findByText(/Nasa/i);
+    expect(MissionElements).toBeInTheDocument();
+  });
+
+  test('Testing the new Mission State Microverse ', async () => {
+    render(<MockingMissions />);
+    const MissionElements = await screen.findByText(/Microverse/i);
+    expect(MissionElements).toBeInTheDocument();
+  });
+
+  test('Testing the new Mission with Mr Ellon ... ', async () => {
+    render(<MockingMissions />);
+    const MissionElements = await screen.findByText(/Ellon/i);
+    expect(MissionElements).toBeInTheDocument();
+  });
+
+  it('Check if Evething is rendered correctly', () => {
+    const { tree } = render(
+      <Provider store={store}>
+        <Missions />
+      </Provider>,
+    );
+    expect(tree).toMatchSnapshot();
+  });
 });
-
-//  test('When the Rocket is reserved', async () => {
-//    render(<MockingRockets />);
-//    const reservedRockeButton = await screen.findByRole('button');
-//    fireEvent.click(reservedRockeButton);
-//    const cancelRockeButton = screen.getByText(/Cancel Reservation/i);
-//    expect(cancelRockeButton).toBeInTheDocument();
-//  });
-
-//  test('When the Rockets Reserve is cancelled', async () => {
-//    render(<MockingRockets />);
-//    const reservedRockeButton = await screen.findByRole('button');
-//    fireEvent.click(reservedRockeButton);
-//    const cancelRockeButton = screen.getByText(/Cancel Reservation/i);
-//    expect(cancelRockeButton).toBeInTheDocument();
-//    fireEvent.click(reservedRockeButton);
-//    const reserveRockeButton = screen.getByText(/Reserve Rocket/i);
-//    expect(reserveRockeButton).toBeInTheDocument();
-//  });
