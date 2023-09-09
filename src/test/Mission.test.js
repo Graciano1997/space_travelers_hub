@@ -38,8 +38,7 @@ function MockingMissions() {
     </Provider>
   );
 }
-describe("testing the Missions", () => {
-
+describe('testing the Missions', () => {
   test('Testing Travel to space with Nasa ', async () => {
     render(<MockingMissions />);
     const MissionElements = await screen.findByText(/Nasa/i);
