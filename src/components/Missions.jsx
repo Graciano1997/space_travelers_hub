@@ -25,7 +25,7 @@ function Missions() {
     );
   }
 
-  const missionsAvailable = missions.slice(0, 5);
+  const missionsAvailable = missions;
 
   return (
     <table className={styles['mission-table']}>

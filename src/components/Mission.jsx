@@ -28,11 +28,6 @@ const Mission = ({
     ? 'mission-reserved'
     : 'mission-not-reserved';
 
-  // const buttonClass = mission.reserved
-  //   ? `leave ${buttonClicked ? 'leave-clicked' : ''}`
-  //   : `join ${buttonClicked ? 'join-clicked' : ''}`;
-  // className = { buttonClass }
-
   return (
     <tr>
       <td className="mission-name">{mission.mission_name}</td>
