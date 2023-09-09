@@ -12,16 +12,6 @@ const initialState = {
 const fetchMissions = createAsyncThunk('missions/fetchMissions', async () => {
   try {
     const response = await axios.get(baseApiUrl);
-    // const result = await response.json();
-
-    // const missions = result.map((mission) => ({
-    //   ...mission,
-    //   reserved: false,
-    // }));
-
-    // localStorage.setItem('missions', JSON.stringify(missions));
-
-    // return missions;
     return response.data;
   } catch (error) {
     throw new Error('Failed to fetch missions.');
@@ -33,9 +23,7 @@ export const missionsSlice = createSlice({
   initialState,
   reducers: {
     joinMission: (state, action) => {
-      // const idMission = action.payload;
       const missionIndex = state.missions.findIndex(
-        // (m) => m.mission_id === action.payload.mission_id,
         (m) => m.mission_id === action.payload,
       );
       if (missionIndex !== -1) {
@@ -45,7 +33,6 @@ export const missionsSlice = createSlice({
     leaveMission: (state, action) => {
       const missionIndex = state.missions.findIndex(
         (m) => m.mission_id === action.payload,
-        // (m) => m.mission_id === action.payload.mission_id,
       );
       if (missionIndex !== -1) {
         state.missions[missionIndex].reserved = false;
@@ -55,11 +42,16 @@ export const missionsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchMissions.pending, (state) => {
-        state.loading = true;// new
+        state.loading = true;
         state.error = null;
       })
       .addCase(fetchMissions.fulfilled, (state, action) => {
-        state.missions = action.payload;
+        state.missions = (action.payload).map((mission) => ({
+          mission_id: mission.mission_id,
+          description: mission.description,
+          mission_name: mission.mission_name,
+          reserved: false,
+        }));
         state.loading = false;
       })
       .addCase(fetchMissions.rejected, (state, action) => {
