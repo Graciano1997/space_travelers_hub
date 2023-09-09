@@ -2,10 +2,7 @@ import { Provider } from 'react-redux';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import store from '../redux/store';
-import configureMockStore from 'redux-mock-store';
 import Missions from '../components/Missions';
-
-// const mockStore = configureMockStore([]);
 
 jest.mock('axios', () => ({
   get: jest.fn(),
@@ -33,7 +30,6 @@ jest.mock('axios', () => ({
 //   ],
 // };
 
-
 function MockingMissions() {
   // const store = mockStore(initialState);
   return (
@@ -44,7 +40,6 @@ function MockingMissions() {
 }
 
 test('the amount of  Rockets and implicitly the getRockets() ', () => {
-
   render(<MockingMissions />);
   const MissionElements = screen.getByText(/This is a lengthy /i);
   expect(MissionElements).toBeInTheDocument();
@@ -68,4 +63,3 @@ test('the amount of  Rockets and implicitly the getRockets() ', () => {
 //    const reserveRockeButton = screen.getByText(/Reserve Rocket/i);
 //    expect(reserveRockeButton).toBeInTheDocument();
 //  });
-

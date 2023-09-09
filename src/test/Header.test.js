@@ -5,7 +5,6 @@ import Logo from '../components/Logo';
 import Nav from '../components/Nav';
 
 describe('testing the Header, Logo and Nav Components', () => {
-
   test('Logo component Should contain Image', () => {
     render(<Logo />);
     const img = screen.getByRole('img');

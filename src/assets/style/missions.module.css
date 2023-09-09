@@ -33,6 +33,7 @@ tbody tr:nth-child(odd) {
 } */
 
 /* Button styles for Mission component */
+
 /* .join,
 .leave {
   padding: 0.3em 0.5em;
@@ -43,7 +44,8 @@ tbody tr:nth-child(odd) {
 } */
 
 /* Added transition for smoother color change */
-/* 
+
+/*
 .join {
   border-color: #949495;
   color: #949495;
@@ -60,12 +62,14 @@ tbody tr:nth-child(odd) {
   background-color: #14b1e0;
   color: #fff;
 } */
+
 /* Change to blue on hover */
 
 /* .leave:hover {
   background-color: #f33;
   color: #fff;
 } */
+
 /* Change to red on hover */
 
 /* Additional styles for Mission component */
