@@ -5,27 +5,26 @@ import style from '../assets/style/Profile.module.css';
 
 function Profile() {
   const { rocketsArray } = useSelector((state) => state.rockets);
-  const reservedRockets = rocketsArray.filter((rocket) => rocket.reserved);
 
   const { missions } = useSelector((state) => state.missions);
-  const reservedmissions = missions.filter((mission) => mission.reserved);
 
   return (
     <div className={style.profileContainer}>
       <div className={style.profileMissions}>
         <h1>My Missions</h1>
         <ListGroup className={style.missionContainer}>
-          {(reservedmissions.length === 0) && (
+          {(missions.filter((mission) => mission.reserved).length === 0) && (
             <ListGroup.Item><Alert variant="info">You don&apos;t have any reserved Misssions 👨‍🚀👩🏿‍🚀 </Alert></ListGroup.Item>
           )}
 
           {
-            reservedmissions.map((mission, index) => (
-              <ListGroup.Item key={{ index }}>
-                {' '}
-                {`${mission.mission_name}👩🏿‍🚀`}
-              </ListGroup.Item>
-            ))
+            missions.filter((mission) => mission.reserved)
+              .map((mission) => (
+                <ListGroup.Item key={mission.mission_id}>
+                  {' '}
+                  {`${mission.mission_name}👩🏿‍🚀`}
+                </ListGroup.Item>
+              ))
           }
         </ListGroup>
       </div>
@@ -34,16 +33,17 @@ function Profile() {
         <h1>My Rockets</h1>
         <ListGroup className={style.rocketsContainer}>
 
-          {(reservedRockets.length === 0) && (
+          {(rocketsArray.filter((rocket) => rocket.reserved).length === 0) && (
             <ListGroup.Item><Alert variant="info">You don&apos;t have any reserved Rockets! 🚀😉😊</Alert></ListGroup.Item>
           )}
 
-          {reservedRockets.map((rocket, index) => (
-            <ListGroup.Item key={{ index }} title="rocketItem">
-              {' '}
-              {`${rocket.rocket_name}🚀`}
-            </ListGroup.Item>
-          ))}
+          {rocketsArray.filter((rocket) => rocket.reserved)
+            .map((rocket) => (
+              <ListGroup.Item key={rocket.id} title="rocketItem">
+                {' '}
+                {`${rocket.rocket_name}🚀`}
+              </ListGroup.Item>
+            ))}
 
         </ListGroup>
       </div>
