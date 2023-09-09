@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing the Rockets the all  1`] = `undefined`;
+
+exports[`testing the Rockets the amount of  Rockets and implicitly the getRockets()  1`] = `undefined`;
+
+exports[`testing the Rockets the item  1`] = `undefined`;

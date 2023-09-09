@@ -1,0 +1,52 @@
+@import url(./root.css);
+
+/* *****Style for header ********/
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  align-items: center;
+}
+
+/* *****HEADER_END *******/
+
+/* *****LOGO_STYLE *******/
+.logoContainer {
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px;
+  align-items: center;
+}
+
+.logo {
+  width: 10%;
+  height: 10%;
+}
+
+/* *****LOGO_END *******/
+
+/* *****NAV_STYLE *******/
+.navContainer {
+  display: flex;
+  gap: 12px;
+}
+
+.navContainer li {
+  list-style: none;
+  cursor: pointer;
+}
+
+.navContainer li a {
+  text-decoration: none;
+
+  /* color: var(--blue); */
+}
+
+.separator {
+  height: 20px;
+  margin-top: 4px;
+  border: 1px solid var(--blue);
+}
+
+/* *****NAV_END *******/

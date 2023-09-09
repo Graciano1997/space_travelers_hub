@@ -1,0 +1,31 @@
+.rocketItem {
+  display: grid;
+  grid-template-columns: 20fr 80fr;
+  margin: 1rem 1rem 0.5rem 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.rocketImageContainer img {
+  width: 100%;
+  height: 100%;
+}
+
+.rocketBody {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1.2rem;
+}
+
+.rocketBody h3 {
+  padding-bottom: 0.5rem;
+}
+
+.btnReserve {
+  margin-top: 0.3rem;
+  width: 25%;
+}
+
+.badge {
+  margin-right: 0.3rem;
+}

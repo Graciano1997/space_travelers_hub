@@ -1,0 +1,12 @@
+.profileContainer {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.rocketsContainer,
+.missionContainer {
+  border: transparent;
+  width: 100%;
+}
