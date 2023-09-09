@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 const baseApiUrl = 'https://api.spacexdata.com/v3/missions';
 
@@ -10,9 +11,8 @@ const initialState = {
 
 const fetchMissions = createAsyncThunk('missions/fetchMissions', async () => {
   try {
-    const response = await fetch(baseApiUrl);
+    const response = await axios.get(baseApiUrl);
     // const result = await response.json();
-    const result = response.json();
 
     // const missions = result.map((mission) => ({
     //   ...mission,
@@ -22,7 +22,7 @@ const fetchMissions = createAsyncThunk('missions/fetchMissions', async () => {
     // localStorage.setItem('missions', JSON.stringify(missions));
 
     // return missions;
-    return result;
+    return response.data;
   } catch (error) {
     throw new Error('Failed to fetch missions.');
   }

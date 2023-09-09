@@ -39,7 +39,7 @@ const rocketsSlice = createSlice({
       .addCase(getRockets.pending, (state) => {
         state.isLoading = true;
       })
-      // You can chain calls, or have separate `builder.addCase()` lines each time
+
       .addCase(getRockets.rejected, (state) => {
         state.isLoading = false;
         state.hasError = true;
@@ -55,25 +55,7 @@ const rocketsSlice = createSlice({
         }));
       });
   },
-  /*  [getRockets.pending]: (state) => {
-      state.isLoading = true;
-    },
-    [getRockets.rejected]: (state) => {
-      state.isLoading = false;
-      state.hasError = true;
-    },
-    [getRockets.fulfilled]: (state, action) => {
-      state.isLoading = false;
-      state.rocketsArray = (action.payload).map((rockect) => ({
-        id: parseInt(rockect.id, 10),
-        flickr_images: rockect.flickr_images,
-        description: rockect.description,
-        rocket_name: rockect.rocket_name,
-        rocket_type: rockect.rocket_type,
-      }));
-    },
-  },
-*/
+
 });
 export const { bookingRockets } = rocketsSlice.actions;
 export default rocketsSlice.reducer;

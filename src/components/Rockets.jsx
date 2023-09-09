@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getRockets } from '../redux/rockets/rocketsSlice';
 import RocketItem from './RocketItem';
-import style from '../style/Info.module.css';
+import style from '../assets/style/Info.module.css';
 
 function Rockets() {
   const { rocketsArray, isLoading, hasError } = useSelector((state) => state.rockets);

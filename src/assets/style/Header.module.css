@@ -20,8 +20,8 @@
 }
 
 .logo {
-  width: 15%;
-  height: 15%;
+  width: 10%;
+  height: 10%;
 }
 
 /* *****LOGO_END *******/
@@ -43,18 +43,9 @@
   /* color: var(--blue); */
 }
 
-.activeLink {
-  color: purple;
-  text-decoration: underline;
-  font-size: 20px;
-}
-
-.agora {
-  color: pink;
-}
-
 .separator {
-  height: 15px;
+  height: 20px;
+  margin-top: 4px;
   border: 1px solid var(--blue);
 }
 

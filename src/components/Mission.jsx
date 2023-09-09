@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import Badge from 'react-bootstrap/Badge';
+import { Button } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { joinMission, leaveMission } from '../redux/missions/MissionsSlice';
+import style from '../assets/style/missions.module.css';
 
 const Mission = ({
   mission,
-  // join,
-  // leave,
 }) => {
   const [buttonClicked, setButtonClicked] = useState(false);
   const [reserved, setReserved] = useState(false);
@@ -20,11 +21,6 @@ const Mission = ({
       dispatch(leaveMission(mission.mission_id));
       setReserved(false);
     }
-    // if (mission.reserved) {
-    //   leave(mission);
-    // } else {
-    //   join(mission);
-    // }
     setButtonClicked(true);
   };
 
@@ -32,27 +28,22 @@ const Mission = ({
     ? 'mission-reserved'
     : 'mission-not-reserved';
 
-  const buttonClass = mission.reserved
-    ? `leave ${buttonClicked ? 'leave-clicked' : ''}`
-    : `join ${buttonClicked ? 'join-clicked' : ''}`;
-
   return (
-    <tr onClick={handleButtonClick}>
+    <tr>
       <td className="mission-name">{mission.mission_name}</td>
-      <td className="mission-description">{mission.description}</td>
+      <td className="mission-descriptionContainer">{mission.description}</td>
       <td className="mission-status">
-        <span className={`${missionStatusClass} ${buttonClicked ? 'mission-status-clicked' : ''}`}>
-          {mission.reserved ? 'Active member' : 'Not a member'}
-        </span>
+        <Badge bg={mission.reserved ? 'primary' : 'secondary'}>
+          <span className={`${missionStatusClass} ${buttonClicked ? 'mission-status-clicked' : ''}`}>
+            {mission.reserved ? 'Active Member' : 'NOT A MEMBER'}
+          </span>
+        </Badge>
+
       </td>
-      <td className="mission-button">
-        <button
-          className={buttonClass}
-          type="button"
-          onClick={handleButtonClick}
-        >
+      <td className="mission-button joinButton">
+        <Button variant={mission.reserved ? 'outline-danger' : 'outline-secondary'} onClick={handleButtonClick} className={style.btnJoinMission}>
           {mission.reserved ? 'Leave Mission' : 'Join Mission'}
-        </button>
+        </Button>
       </td>
     </tr>
   );
@@ -65,8 +56,6 @@ Mission.propTypes = {
     reserved: PropTypes.bool.isRequired,
     mission_id: PropTypes.string.isRequired,
   }).isRequired,
-  // join: PropTypes.func.isRequired,
-  // leave: PropTypes.func.isRequired,
 };
 
 export default Mission;
