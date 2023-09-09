@@ -1,3 +1,4 @@
+import Alert from 'react-bootstrap/Alert';
 import { useSelector } from 'react-redux';
 import ListGroup from 'react-bootstrap/ListGroup';
 import style from '../assets/style/Profile.module.css';
@@ -15,7 +16,7 @@ function Profile() {
         <h1>My Missions</h1>
         <ListGroup className={style.missionContainer}>
           {(reservedmissions.length === 0) && (
-            <ListGroup.Item>You don&apos;t have any reserved Misssions 👨‍🚀👩🏿‍🚀 </ListGroup.Item>
+            <ListGroup.Item><Alert variant="info">You don&apos;t have any reserved Misssions 👨‍🚀👩🏿‍🚀 </Alert></ListGroup.Item>
           )}
 
           {
@@ -34,7 +35,7 @@ function Profile() {
         <ListGroup className={style.rocketsContainer}>
 
           {(reservedRockets.length === 0) && (
-            <ListGroup.Item>You don&apos;t have any reserved Rockets! 🚀😉😊</ListGroup.Item>
+            <ListGroup.Item><Alert variant="info">You don&apos;t have any reserved Rockets! 🚀😉😊</Alert></ListGroup.Item>
           )}
 
           {reservedRockets.map((rocket, index) => (
