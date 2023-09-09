@@ -12,7 +12,7 @@ const response = {
       description: 'Going to Study in space',
       reserved: false,
     },
-   ],
+  ],
 };
 
 jest.mock('axios', () => ({
@@ -33,7 +33,6 @@ describe('testing the Missions', () => {
     expect(MissionElements).toBeInTheDocument();
   });
 
- 
   it('Check if Evething is rendered correctly', () => {
     const { tree } = render(
       <Provider store={store}>
