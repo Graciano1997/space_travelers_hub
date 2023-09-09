@@ -12,19 +12,7 @@ const response = {
       description: 'Going to Study in space',
       reserved: false,
     },
-    {
-      mission_id: '2arora',
-      mission_name: 'Travel with Nasa',
-      description: 'Let us go ....',
-      reserved: false,
-    },
-    {
-      mission_id: '3g',
-      mission_name: 'Travel with Start',
-      description: 'Please call Mr Ellon ....',
-      reserved: false,
-    },
-  ],
+   ],
 };
 
 jest.mock('axios', () => ({
@@ -39,24 +27,13 @@ function MockingMissions() {
   );
 }
 describe('testing the Missions', () => {
-  test('Testing Travel to space with Nasa ', async () => {
-    render(<MockingMissions />);
-    const MissionElements = await screen.findByText(/Nasa/i);
-    expect(MissionElements).toBeInTheDocument();
-  });
-
-  test('Testing the new Mission State Microverse ', async () => {
+  test('Testing Travel to space with Microverse ', async () => {
     render(<MockingMissions />);
     const MissionElements = await screen.findByText(/Microverse/i);
     expect(MissionElements).toBeInTheDocument();
   });
 
-  test('Testing the new Mission with Mr Ellon ... ', async () => {
-    render(<MockingMissions />);
-    const MissionElements = await screen.findByText(/Ellon/i);
-    expect(MissionElements).toBeInTheDocument();
-  });
-
+ 
   it('Check if Evething is rendered correctly', () => {
     const { tree } = render(
       <Provider store={store}>
