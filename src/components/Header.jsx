@@ -1,4 +1,4 @@
-import style from '../style/Header.module.css';
+import style from '../assets/style/Header.module.css';
 import Logo from './Logo';
 import Nav from './Nav';
 

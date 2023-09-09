@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import style from '../style/Rocket.module.css';
+import Badge from 'react-bootstrap/Badge';
+import { Button } from 'react-bootstrap';
 import { bookingRockets } from '../redux/rockets/rocketsSlice';
+import style from '../assets/style/Rocket.module.css';
 
 function RocketItem({
   id, name, description, imageRocket, reserved,
@@ -16,9 +18,17 @@ function RocketItem({
       <div className={style.rocketImageContainer}><img src={imageRocket[0]} alt="rocket" /></div>
       <div className={style.rocketBody}>
         <h3>{name}</h3>
-        {reserved && <div>Reserved</div>}
-        <p>{description}</p>
-        <button type="button" aria-label="reserve / calncel  rocket" onClick={handlerReserve}>{info}</button>
+        <p>
+          {reserved && (
+          <Badge bg="primary" className={style.badge}>
+            Reserved
+          </Badge>
+          )}
+          {description}
+        </p>
+        <Button as="button" variant={(reserved) ? 'outline-secondary' : 'primary'} onClick={handlerReserve} className={style.btnReserve}>
+          {info}
+        </Button>
       </div>
     </div>
   );

@@ -1,11 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
-import Header from './assets/components/Header';
-import Rocket from './assets/components/Rockets';
-import Profile from './assets/components/Profile';
-import Missions from './assets/components/Missions';
+import Header from './components/Header';
+import Rocket from './components/Rockets';
+import Profile from './components/Profile';
+import Missions from './components/Missions';
+import style from './assets/style/App.module.css';
 
 const App = () => (
-  <>
+  <div className={style.appContainer}>
     <Header />
     <Routes>
       <Route path="/" element={<Rocket />} />
@@ -13,7 +14,7 @@ const App = () => (
       <Route path="/missions" element={<Missions />} />
       <Route path="/profile" element={<Profile />} />
     </Routes>
-  </>
+  </div>
 );
 
 export default App;

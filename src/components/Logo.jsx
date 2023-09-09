@@ -1,5 +1,5 @@
-import style from '../style/Header.module.css';
-import logo from '../img/planet.png';
+import style from '../assets/style/Header.module.css';
+import logo from '../assets/img/planet.png';
 
 const Logo = () => (
   <div className={style.logoContainer}>

@@ -1,4 +1,12 @@
 body {
   margin: 0;
   padding: 0;
+
+}
+
+.active {
+  transition: all 0.3s ease-in-out;
+  text-decoration: underline;
+  border-bottom: 2px solid rgba(75, 74, 74, 0.767);
+  padding-bottom: 2px;
 }
